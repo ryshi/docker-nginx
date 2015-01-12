@@ -19,7 +19,7 @@ RUN wget -O /tmp/nginx-1.7.9.tar.gz http://nginx.org/download/nginx-1.7.9.tar.gz
     ( bash && \
       cd /tmp/LuaJIT-2.0.3 && \
       make && \
-      make install )
+      make install ) && \
     ( cd /tmp/nginx-1.7.9 && \
       export LUAJIT_LIB=/usr/local/lib && \
       export LUAJIT_INC=/usr/local/include/luajit-2.0 && \
