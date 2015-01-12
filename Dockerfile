@@ -17,13 +17,7 @@ RUN wget -O /tmp/LuaJIT-2.0.3.tar.gz http://luajit.org/download/LuaJIT-2.0.3.tar
 RUN wget -O /tmp/lua-nginx-module-0.9.13.zip https://github.com/openresty/lua-nginx-module/archive/v0.9.13.zip
 RUN wget -O /tmp/ngx_devel_kit-0.2.19.zip https://github.com/simpl/ngx_devel_kit/archive/v0.2.19.zip
 RUN wget -O /tmp/ngx_cache_purge-2.3.tar.gz http://labs.frickle.com/files/ngx_cache_purge-2.3.tar.gz
-
-#COPY ./nginx-1.6.2.tar.gz /tmp/nginx-1.6.2.tar.gz
-#COPY ./LuaJIT-2.0.3.tar.gz /tmp/LuaJIT-2.0.3.tar.gz
-#COPY ./lua-nginx-module-0.9.13.zip /tmp/lua-nginx-module-0.9.13.zip
-#COPY ./ngx_devel_kit-0.2.19.zip /tmp/ngx_devel_kit-0.2.19.zip
-#COPY ./ngx_cache_purge-2.3.tar.gz /tmp/ngx_cache_purge-2.3.tar.gz
-
+  
 RUN ( cd /tmp/ && tar zxf nginx-1.6.2.tar.gz )
 RUN ( cd /tmp/ && tar zxf LuaJIT-2.0.3.tar.gz )
 RUN ( cd /tmp/ && tar zxf ngx_cache_purge-2.3.tar.gz )
@@ -51,7 +45,7 @@ RUN mkdir -p /etc/nginx/sites
 RUN mkdir -p /etc/nginx/certs
 RUN mkdir -p /var/cache/nginx/client_temp
 
-RUN rm -rf /etc/nginx/sites-enabled
+#RUN rm -rf /etc/nginx/sites-enabled
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 RUN rm -rf /tmp/*
