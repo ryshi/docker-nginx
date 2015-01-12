@@ -29,10 +29,10 @@ RUN wget -O /tmp/nginx-1.7.9.tar.gz http://nginx.org/download/nginx-1.7.9.tar.gz
     ln -s /usr/local/lib/libluajit-5.1.so.2 /lib64/libluajit-5.1.so.2 && \
     mkdir -p /etc/nginx/sites && \
     mkdir -p /etc/nginx/certs && \
-    mkdir -p /var/cache/nginx/client_temp && \
-    ./nginx.conf /etc/nginx/nginx.conf && \
+    mkdir -p /var/cache/nginx/client_temp && \ 
     rm -rf /tmp/*
 
+COPY ./nginx.conf /etc/nginx/nginx.conf
 WORKDIR /etc/nginx
 VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx"]
 EXPOSE 80
