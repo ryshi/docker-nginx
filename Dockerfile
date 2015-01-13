@@ -12,7 +12,7 @@ RUN apt-get install -y libpcre3-dev
 RUN apt-get install -y openssl
 RUN apt-get install -y libssl-dev
 
-RUN wget -O /tmp/nginx-1.6.2.tar.gz wget http://nginx.org/download/nginx-1.6.2.tar.gz
+RUN wget -O /tmp/nginx-1.6.2.tar.gz http://nginx.org/download/nginx-1.6.2.tar.gz
 RUN wget -O /tmp/LuaJIT-2.0.3.tar.gz http://luajit.org/download/LuaJIT-2.0.3.tar.gz
 RUN wget -O /tmp/lua-nginx-module-0.9.13.zip https://github.com/openresty/lua-nginx-module/archive/v0.9.13.zip
 RUN wget -O /tmp/ngx_devel_kit-0.2.19.zip https://github.com/simpl/ngx_devel_kit/archive/v0.2.19.zip
